@@ -24,11 +24,32 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `http://gatsbytest.kit.trafficterminal.com/`,
+        protocol: `http`,
+        restApiRoutePrefix: "wp-json",
+        hostingWPCOM: false,
+        useACF: false,
+        auth: {
+          htaccess_user: "gnezdilov",
+          htaccess_pass: "hniezdilovpavel",
+          htaccess_sendImmediately: false,
+        },
+        // includedRoutes: [
+        //   "**/get_advanced_menu?name=main-menu",
+        //   "**/posts",
+        //   "**/pages",
+        //   "**/media",
+        //   "**/tags",
+        //   "**/taxonomies",
+        //   "**/users",
+        // ]
+      },
+    },
   ],
 }
