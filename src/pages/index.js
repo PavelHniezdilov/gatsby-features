@@ -6,6 +6,8 @@ class Homepage extends Component {
   render() {
     const data = this.props.data
 
+    console.log(data);
+
     return (
       <div style={{
         maxWidth: 1000,
@@ -15,14 +17,14 @@ class Homepage extends Component {
         <Header />
 
         <h1>Posts</h1>
-        {data.allWordpressPost.edges.map(({ node }) => (
-          <div key={node.slug}>
-            <Link to={node.slug}>
-              <h2>{node.title}</h2>
-            </Link>
-            <div dangerouslySetInnerHTML={{__html: node.excerpt}} />
-          </div>
-        ))}
+        {/*{data.allWordpressPost.edges.map(({ node }) => (*/}
+        {/*  <div key={node.slug}>*/}
+        {/*    <Link to={node.slug}>*/}
+        {/*      <h2>{node.title}</h2>*/}
+        {/*    </Link>*/}
+        {/*    <div dangerouslySetInnerHTML={{__html: node.excerpt}} />*/}
+        {/*  </div>*/}
+        {/*))}*/}
       </div>
     )
   }
@@ -30,16 +32,16 @@ class Homepage extends Component {
 
 export default Homepage
 
-export const pageQuery = graphql`
-  query {
-    allWordpressPost {
-      edges {
-        node {
-          title
-          excerpt
-          slug
-        }
-      }
-    }
-  }
-`
+// export const pageQuery = graphql`
+//   query {
+//     allWordpressPost {
+//       edges {
+//         node {
+//           title
+//           excerpt
+//           slug
+//         }
+//       }
+//     }
+//   }
+// `

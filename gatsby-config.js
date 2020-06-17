@@ -28,28 +28,31 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-wordpress`,
+      resolve: "gatsby-source-apiserver",
       options: {
-        baseUrl: `http://gatsbytest.kit.trafficterminal.com/`,
-        protocol: `http`,
-        restApiRoutePrefix: "wp-json",
-        hostingWPCOM: false,
-        useACF: false,
         auth: {
-          htaccess_user: "gnezdilov",
-          htaccess_pass: "hniezdilovpavel",
-          htaccess_sendImmediately: false,
+          username: "gnezdilov",
+          password: "hniezdilovpavel"
         },
-        // includedRoutes: [
-        //   "**/get_advanced_menu?name=main-menu",
-        //   "**/posts",
-        //   "**/pages",
-        //   "**/media",
-        //   "**/tags",
-        //   "**/taxonomies",
-        //   "**/users",
-        // ]
-      },
-    },
+        entitiesArray: [
+          {
+            url: `http://gatsbytest.kit.trafficterminal.com/wp-json/wp/v2/posts`,
+            method: "get",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            name: `posts`,
+          },
+          {
+            url: `http://gatsbytest.kit.trafficterminal.com/wp-json/template/v2/getAdvancedMenu1`,
+            method: "get",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            name: `getAdvancedMenu1`,
+          }
+        ]
+      }
+    }
   ],
 }
