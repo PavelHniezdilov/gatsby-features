@@ -1,12 +1,9 @@
 import React, { Component } from "react"
-import { Link, graphql } from "gatsby"
 import Header from "../components/header"
+import Image from "../components/image"
 
 class Homepage extends Component {
   render() {
-    const data = this.props.data
-
-    console.log(data);
 
     return (
       <div style={{
@@ -17,31 +14,19 @@ class Homepage extends Component {
         <Header />
 
         <h1>Posts</h1>
-        {/*{data.allWordpressPost.edges.map(({ node }) => (*/}
-        {/*  <div key={node.slug}>*/}
-        {/*    <Link to={node.slug}>*/}
-        {/*      <h2>{node.title}</h2>*/}
-        {/*    </Link>*/}
-        {/*    <div dangerouslySetInnerHTML={{__html: node.excerpt}} />*/}
-        {/*  </div>*/}
-        {/*))}*/}
+        <Image
+          alt="image"
+          filename="Simulator_Screen_Shot_-_iPhone_11_-_2020-06-01_at_10.59.10_218f9d6e52.png"
+          width={280}
+        />
+        <Image
+          alt="image"
+          filename="Screenshot_20200601-113635_weather_b408fb9b08.jpg"
+          width={280}
+        />
       </div>
     )
   }
 }
 
 export default Homepage
-
-// export const pageQuery = graphql`
-//   query {
-//     allWordpressPost {
-//       edges {
-//         node {
-//           title
-//           excerpt
-//           slug
-//         }
-//       }
-//     }
-//   }
-// `

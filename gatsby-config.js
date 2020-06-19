@@ -30,27 +30,15 @@ module.exports = {
     {
       resolve: "gatsby-source-apiserver",
       options: {
-        auth: {
-          username: "gnezdilov",
-          password: "hniezdilovpavel"
-        },
         entitiesArray: [
           {
-            url: `http://gatsbytest.kit.trafficterminal.com/wp-json/wp/v2/posts`,
+            url: `https://hniezdilov-portfolio.herokuapp.com/projects`,
             method: "get",
             headers: {
               "Content-Type": "application/json"
             },
-            name: `posts`,
+            name: `projects`,
           },
-          {
-            url: `http://gatsbytest.kit.trafficterminal.com/wp-json/template/v2/getAdvancedMenu1`,
-            method: "get",
-            headers: {
-              "Content-Type": "application/json"
-            },
-            name: `getAdvancedMenu1`,
-          }
         ]
       }
     }
