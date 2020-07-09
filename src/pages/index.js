@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import Header from "../components/header"
 import Image from "../components/image"
+import ArtDirection from "../components/artDirection"
 
 class Homepage extends Component {
   render() {
@@ -24,6 +25,7 @@ class Homepage extends Component {
           filename="Screenshot_20200601-113635_weather_b408fb9b08.jpg"
           width={280}
         />
+        <ArtDirection />
       </div>
     )
   }
